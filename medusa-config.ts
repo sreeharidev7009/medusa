@@ -2,13 +2,13 @@ import { loadEnv, defineConfig } from "@medusajs/framework/utils";
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd());
 
-export default defineConfig({
+module.exports = defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
-    databaseType: "postgres",
-    databaseExtra: {
+    database_type: "postgres",
+    database_extra: {
       ssl: {
-        rejectUnauthorized: false, // Required for Render
+        rejectUnauthorized: false,
       },
     },
     http: {
