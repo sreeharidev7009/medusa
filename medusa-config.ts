@@ -1,6 +1,7 @@
 import { loadEnv, defineConfig } from "@medusajs/framework/utils"
 
-loadEnv()
+loadEnv(process.env.NODE_ENV || "development", process.cwd())
+
 
 export default defineConfig({
   projectConfig: {
@@ -13,6 +14,8 @@ export default defineConfig({
     http: {
       storeCors: process.env.STORE_CORS || "*",
       adminCors: process.env.ADMIN_CORS || "*",
+authCors: process.env.AUTH_CORS || "*",
+
     },
   },
 })
