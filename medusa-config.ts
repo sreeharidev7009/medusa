@@ -7,12 +7,7 @@ export default defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL, // PostgreSQL connection string from Railway
 
-    // ✅ Required for Railway PostgreSQL
-     databaseExtra: {
-      ssl: {
-        rejectUnauthorized: false,
-      },
-    },
+    // ✅ Required for Railway PostgreSQ
 
     http: {
       storeCors: process.env.STORE_CORS || "*",
