@@ -1,11 +1,10 @@
-import { loadEnv, defineConfig } from "@medusajs/framework/utils"
+import { loadEnv, defineConfig } from "@medusajs/framework/utils";
 
-loadEnv()
+loadEnv(); // Automatically loads .env
 
 export default defineConfig({
   projectConfig: {
-    database_url: process.env.DATABASE_URL,
-    database_type: "postgres", // ✅ correct key
+    database_url: process.env.DATABASE_URL, // ✅ correct
     database_extra: {
       ssl: {
         rejectUnauthorized: false,
@@ -16,4 +15,7 @@ export default defineConfig({
       admin_cors: process.env.ADMIN_CORS || "*",
     },
   },
-})
+  modules: {
+    // your modules here
+  },
+});
