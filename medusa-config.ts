@@ -1,14 +1,16 @@
 import { loadEnv, defineConfig } from "@medusajs/framework/utils"
 
-// Load env variables from `.env` or Railway config
+// Load env variables
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
 export default defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     databaseType: "postgres",
-    databaseSSL: {
-      rejectUnauthorized: false, // <-- Accept self-signed certs
+    databaseExtra: {
+      ssl: {
+        rejectUnauthorized: false, // Required for Railway SSL
+      },
     },
     http: {
       storeCors: process.env.STORE_CORS || "*",
