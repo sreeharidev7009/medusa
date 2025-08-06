@@ -12,8 +12,9 @@ export default defineConfig({
       },
     },
     http: {
-      storeCors: process.env.STORE_CORS || "*",   // ✅ camelCase
-      adminCors: process.env.ADMIN_CORS || "*",   // ✅ camelCase
+      storeCors: process.env.STORE_CORS || "*",
+      adminCors: process.env.ADMIN_CORS || "*",
+      authCors: process.env.AUTH_CORS || "*", // ✅ Add this line
     },
   },
 });
