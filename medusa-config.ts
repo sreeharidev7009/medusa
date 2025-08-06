@@ -8,7 +8,7 @@ export default defineConfig({
     databaseUrl: process.env.DATABASE_URL, // PostgreSQL connection string from Railway
 
     // ✅ Required for Railway PostgreSQL
-    driverOptions: {
+     databaseExtra: {
       ssl: {
         rejectUnauthorized: false,
       },
